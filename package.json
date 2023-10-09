@@ -34,5 +34,5 @@
 		"typescript": "^5.0.2",
 		"vite": "^4.4.5"
 	},
-	"homepage": "http://AxiomaticAdi.github.io/scryfall-image-downloader"
+	"homepage": "http://axiomaticadi.github.io/scryfall-image-downloader"
 }

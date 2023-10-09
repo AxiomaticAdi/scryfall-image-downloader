@@ -1,7 +1,6 @@
 import "./App.css";
 import { CardEntryForm } from "./CardEntryForm";
 import { Instructions } from "./Instructions";
-import mtgLogo from "/src/assets/Magicthegathering-logo.svg.png";
 import gitLogo from "/src/assets/github-logo-white.svg";
 
 function App() {

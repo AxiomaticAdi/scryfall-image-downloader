@@ -1,9 +1,11 @@
 import "./App.css";
 import { CardEntryForm } from "./CardEntryForm";
+import { Instructions } from "./Instructions";
 
 function App() {
 	return (
 		<div
+			id="page"
 			style={{
 				display: "flex",
 				flexDirection: "column",
@@ -11,23 +13,41 @@ function App() {
 				justifyContent: "space-between",
 			}}
 		>
-			<h1>Magic Card Image Downloader for Billy</h1>
+			<div id="top">
+				<img
+					src="../public/Magicthegathering-logo.svg.png"
+					height="100px"
+					width="auto"
+					title="MTG"
+					alt="Magic the Gathering logo"
+				/>
+				<h1>Scryfall MTG Card Image Download Engine</h1>
+				<h2>Originally designed for Billy</h2>
+			</div>
+
 			<div
+				id="middle-1"
 				style={{
 					display: "flex",
 					flexDirection: "column",
 				}}
 			>
-				<h3>Instructions for use:</h3>
-				Add one card per line in the format "[number] [card name]"
-				<i>Example:</i>1 sol ring
-			</div>
-			<div>
+				<h4>Enter Magic Card Names (up to 50)</h4>
 				<CardEntryForm />
+				<Instructions />
 			</div>
-			<p className="credits">
-				Powered by <a href="https://scryfall.com/docs/api">scryfall API</a>
-			</p>
+
+			<div className="bottom">
+				<a href="https://github.com/AxiomaticAdi/">
+					<img
+						src="../public/github-logo-white.svg"
+						height="50px"
+						width="auto"
+						title="my github"
+						alt="my github"
+					/>
+				</a>
+			</div>
 		</div>
 	);
 }

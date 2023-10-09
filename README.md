@@ -12,8 +12,9 @@ This engine was conceived out of a desire to assist content creators, especially
 
 ## Learnings
 
-- Advanced my skills in React, making it the second project I've employed this framework
-- Greater experience with restful APIs
+- Advanced my skills in React by building a my second project using Vite + React + Typescript
+- Added unit testing with Jest
+- Learned how to properly navigate and use Scryfall API
 
 ## Quick Start
 

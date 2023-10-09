@@ -16,14 +16,8 @@ function App() {
 			}}
 		>
 			<div id="top">
-				<img
-					src={mtgLogo}
-					height="100px"
-					width="auto"
-					title="MTG"
-					alt="Magic the Gathering logo"
-				/>
 				<h1>Scryfall MTG Card Image Download Engine</h1>
+				<Instructions />
 			</div>
 
 			<div
@@ -35,7 +29,6 @@ function App() {
 			>
 				<h4>Enter Magic Card Names (up to 50)</h4>
 				<CardEntryForm />
-				<Instructions />
 			</div>
 
 			<div className="bottom">

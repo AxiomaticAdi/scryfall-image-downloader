@@ -22,7 +22,6 @@ function App() {
 					alt="Magic the Gathering logo"
 				/>
 				<h1>Scryfall MTG Card Image Download Engine</h1>
-				<h2>Originally designed for Billy</h2>
 			</div>
 
 			<div

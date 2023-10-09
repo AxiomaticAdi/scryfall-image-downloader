@@ -6,7 +6,7 @@ const style = {
 	top: "50%",
 	left: "50%",
 	transform: "translate(-50%, -50%)",
-	width: 400,
+	maxWidth: 600,
 	bgcolor: "black",
 	border: "2px solid #000",
 	borderRadius: "25px",
@@ -33,9 +33,13 @@ export function Instructions() {
 						Instructions
 					</Typography>
 					<Typography id="modal-modal-description" sx={{ mt: 2 }}>
-						<div>
-							Add one card per line in the format "[number] [card name]"
-						</div>
+						<ol>
+							<li>
+								Add one card per line in the format "[number] [card name]"
+							</li>
+							<li>Click "fetch images" to generate image links</li>
+							<li>Click on each image link to start image download</li>
+						</ol>
 						<p>
 							<div>
 								<i>Example:</i>

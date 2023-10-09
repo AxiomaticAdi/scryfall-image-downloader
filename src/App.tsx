@@ -39,7 +39,7 @@ function App() {
 			</div>
 
 			<div className="bottom">
-				<a href="https://github.com/AxiomaticAdi/">
+				<a href="https://github.com/AxiomaticAdi/scryfall-image-downloader">
 					<img
 						src={gitLogo}
 						height="50px"

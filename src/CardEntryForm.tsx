@@ -28,7 +28,7 @@ export const CardEntryForm: FC = () => {
 
 	return (
 		<>
-			<h4>Enter Magic Card Names (up to 5)</h4>
+			<h4>Enter Magic Card Names (up to 50)</h4>
 			<div style={{ display: "flex", flexDirection: "column" }}>
 				<form
 					onSubmit={handleSubmit}

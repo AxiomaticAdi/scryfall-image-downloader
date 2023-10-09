@@ -1,6 +1,8 @@
 import "./App.css";
 import { CardEntryForm } from "./CardEntryForm";
 import { Instructions } from "./Instructions";
+import mtgLogo from "../public/Magicthegathering-logo.svg.png";
+import gitLogo from "../public/github-logo-white.svg";
 
 function App() {
 	return (
@@ -15,7 +17,7 @@ function App() {
 		>
 			<div id="top">
 				<img
-					src="/Magicthegathering-logo.svg.png"
+					src={mtgLogo}
 					height="100px"
 					width="auto"
 					title="MTG"
@@ -39,7 +41,7 @@ function App() {
 			<div className="bottom">
 				<a href="https://github.com/AxiomaticAdi/">
 					<img
-						src="/github-logo-white.svg"
+						src={gitLogo}
 						height="50px"
 						width="auto"
 						title="my github"

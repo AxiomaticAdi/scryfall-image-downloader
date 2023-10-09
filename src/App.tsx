@@ -15,7 +15,7 @@ function App() {
 		>
 			<div id="top">
 				<img
-					src="../public/Magicthegathering-logo.svg.png"
+					src="/Magicthegathering-logo.svg.png"
 					height="100px"
 					width="auto"
 					title="MTG"
@@ -39,7 +39,7 @@ function App() {
 			<div className="bottom">
 				<a href="https://github.com/AxiomaticAdi/">
 					<img
-						src="../public/github-logo-white.svg"
+						src="/github-logo-white.svg"
 						height="50px"
 						width="auto"
 						title="my github"

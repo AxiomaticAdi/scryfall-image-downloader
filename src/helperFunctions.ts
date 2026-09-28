@@ -17,7 +17,9 @@ export function decklistToArray(decklist: string): string[] {
 	return cardArray;
 }
 
-export async function fetchCard(card: string): Promise<string> {
+export type CardImage = { name: string; url: string };
+
+export async function fetchCard(card: string): Promise<CardImage[]> {
 	try {
 		const urlCardName: string = encodeURIComponent(card);
 		const response = await fetch(
@@ -30,9 +32,23 @@ export async function fetchCard(card: string): Promise<string> {
 		}
 
 		const cardData = await response.json();
-		return cardData.image_uris.png;
+		// Double-sided cards have images on their faces, not on the card itself.
+		if (cardData.image_uris?.png) {
+			return [{ name: card, url: cardData.image_uris.png }];
+		}
+
+		const faces: CardImage[] = (cardData.card_faces ?? [])
+			.filter((face: { image_uris?: { png?: string } }) => face.image_uris?.png)
+			.map((face: { name: string; image_uris: { png: string } }) => ({
+				name: face.name,
+				url: face.image_uris.png,
+			}));
+		if (faces.length > 0) {
+			return faces;
+		}
+		throw new Error(`No PNG image available for ${card}`);
 	} catch (error) {
 		console.log(error);
-		return "ERROR";
+		return [{ name: card, url: "ERROR" }];
 	}
 }

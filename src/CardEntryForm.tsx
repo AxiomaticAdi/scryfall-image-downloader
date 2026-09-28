@@ -1,10 +1,9 @@
 import { FC, useState, ChangeEvent, FormEvent } from "react";
-import { decklistToArray, fetchCard } from "./helperFunctions";
+import { CardImage, decklistToArray, fetchCard } from "./helperFunctions";
 
 export const CardEntryForm: FC = () => {
 	const [cardNames, setCardNames] = useState<string>("");
-	const [imageUrls, setImageUrls] = useState<string[]>([]);
-	const [cardArray, setCardArray] = useState<string[]>([]);
+	const [images, setImages] = useState<CardImage[]>([]);
 
 	const handleInputChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
 		setCardNames(event.target.value);
@@ -15,12 +14,11 @@ export const CardEntryForm: FC = () => {
 
 		// Convert card names to array
 		const processedCardArray = decklistToArray(cardNames);
-		setCardArray(processedCardArray); // Set the card array to state here
 
 		// Fetch all card images and set the URLs to state
 		try {
-			const urls = await Promise.all(processedCardArray.map(fetchCard));
-			setImageUrls(urls);
+			const cardImages = await Promise.all(processedCardArray.map(fetchCard));
+			setImages(cardImages.flat());
 		} catch (error) {
 			console.log(error);
 		}
@@ -45,9 +43,9 @@ export const CardEntryForm: FC = () => {
 				</form>
 
 				<div style={{ display: "flex", flexDirection: "column" }}>
-					{imageUrls.map((url, index) => (
+					{images.map(({ name, url }, index) => (
 						<a key={index} href={url} target="_blank" rel="noopener noreferrer">
-							Image {index + 1}: {cardArray[index]}
+							Image {index + 1}: {name}
 						</a>
 					))}
 				</div>
